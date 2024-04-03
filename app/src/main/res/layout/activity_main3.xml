@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEDBDD"
+    android:orientation="vertical"
+    tools:context=".MainActivity3">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF0F5"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:padding="15sp"
+        android:text="货币换算器"
+        android:textColor="#696969"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/rmb"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="    请输入金额(单位：rmb)"
+        android:inputType="text"
+        android:textColor="#696969"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:padding="15sp"
+        android:text="Hello Money"
+        android:textColor="#696969"
+        android:textSize="34sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="Click"
+        android:text="Dollar"
+        android:textColor="#E8E8E8"
+        android:textSize="24dp" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:onClick="Click"
+        android:text="Euro"
+        android:textColor="#E8E8E8"
+        android:textSize="24dp"/>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:onClick="Click"
+        android:text="Won"
+        android:textColor="#E8E8E8"
+        android:textSize="24dp"/>
+</LinearLayout>
