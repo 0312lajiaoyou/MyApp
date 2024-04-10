@@ -17,7 +17,8 @@
         android:padding="15sp"
         android:text="货币换算器"
         android:textColor="#696969"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:elevation="15dp"/>
 
     <EditText
         android:id="@+id/rmb"
@@ -44,7 +45,7 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
@@ -54,7 +55,7 @@
         android:textSize="24dp" />
     <Button
         android:id="@+id/button2"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
@@ -64,12 +65,22 @@
         android:textSize="24dp"/>
     <Button
         android:id="@+id/button3"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:onClick="Click"
         android:text="Won"
+        android:textColor="#E8E8E8"
+        android:textSize="24dp"/>
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:onClick="Config"
+        android:text="修改汇率"
         android:textColor="#E8E8E8"
         android:textSize="24dp"/>
 </LinearLayout>
