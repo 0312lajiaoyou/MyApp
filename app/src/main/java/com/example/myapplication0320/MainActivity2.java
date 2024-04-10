@@ -1,5 +1,7 @@
 package com.example.myapplication0320;
 
+import static android.app.ProgressDialog.show;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,7 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
-
+    int score_oldA;
+    int score_oldB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +23,8 @@ public class MainActivity2 extends AppCompatActivity {
     public void Click(View view) {
         TextView scoreA=findViewById(R.id.out1);
         TextView scoreB=findViewById(R.id.out2);
-        int score_oldA=Integer.parseInt(scoreA.getText().toString());
-        int score_oldB=Integer.parseInt(scoreB.getText().toString());
+        score_oldA=Integer.parseInt(scoreA.getText().toString());
+        score_oldB=Integer.parseInt(scoreB.getText().toString());
         if(view.getId()==R.id.button3){//+3
             scoreA.setText(String.valueOf(score_oldA+3));
         } else if (view.getId()==R.id.button2) {//+2
@@ -39,8 +42,31 @@ public class MainActivity2 extends AppCompatActivity {
     public void reset(View view) {
         TextView scoreA=findViewById(R.id.out1);
         TextView scoreB=findViewById(R.id.out2);
-        int sum=0;
-        scoreA.setText(String.valueOf(sum));
-        scoreB.setText(String.valueOf(sum));
+        int score1=0;
+        int score2=0;
+        scoreA.setText(String.valueOf(score1));
+        scoreB.setText(String.valueOf(score2));
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        TextView scoreA=findViewById(R.id.out1);
+        TextView scoreB=findViewById(R.id.out2);
+        score_oldA=Integer.parseInt(scoreA.getText().toString());
+        score_oldB=Integer.parseInt(scoreB.getText().toString());
+        outState.putInt("score-a",score_oldA);
+        outState.putInt("score-b",score_oldB);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        TextView scoreA=findViewById(R.id.out1);
+        TextView scoreB=findViewById(R.id.out2);
+        score_oldA = savedInstanceState.getInt("score-a");
+        score_oldB = savedInstanceState.getInt("score-b");
+        scoreA.setText(String.valueOf(score_oldA));
+        scoreB.setText(String.valueOf(score_oldB));
     }
 }
