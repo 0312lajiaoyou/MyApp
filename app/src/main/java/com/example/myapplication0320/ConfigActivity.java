@@ -1,12 +1,9 @@
 package com.example.myapplication0320;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -21,7 +18,7 @@ public class ConfigActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
-        Intent intent1 = new Intent(this,MainActivity3.class);
+        Intent intent1 = new Intent(this, RateActivity.class);
 
         EditText dollarInput = findViewById(R.id.dollar);
         EditText euroInput = findViewById(R.id.euro);
