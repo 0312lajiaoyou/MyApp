@@ -2,16 +2,20 @@ package com.example.myapplication0320;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
+import androidx.activity.result.ActivityResult;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ListActivity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -19,9 +23,15 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 public class MylistActivity extends ListActivity {
     private static final String TAG ="MylistActivity";
@@ -45,6 +55,12 @@ public class MylistActivity extends ListActivity {
                             new String[]{"itemTitle","itemDetail"},
                             new int[]{R.id.itemTitle,R.id.itemDetail});
                 setListAdapter(listItemAdapter);
+
+                    //向数据库中写入数据
+                    Ratemanager manager=new Ratemanager(MylistActivity.this);
+                    RateItem item=new RateItem("测试币种",333f);
+                    manager.add(item);
+                    Toast.makeText(MylistActivity.this, "数据写入完毕", Toast.LENGTH_SHORT).show();
                 }
                 super.handleMessage(msg);
             }
